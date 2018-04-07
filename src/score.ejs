@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+         <!----CSS File Link---->
+         <% include ./components/header %>
+         <link rel="stylesheet" type="text/css" href="css/styleScore.css"> </link>
+    </head>
+
+    <body>
+        <input type="hidden" value="<%= name %>" id="player">
+        <input type="hidden" value="<%= score %>" id="playerScore">
+
+        <!----Question---->
+        <div class="containerQuestion">
+            <img src = "image/logo-02.png">
+
+            <div align="center"></div>
+            
+            <div class="font-question" id="myScore"></div> 
+
+            <div class="font-Q">
+                Top Score!
+            </div>
+            
+            <div class="font-question" id="Username"></div>
+    
+            <div class="font-question" id="Score"></div>   
+            
+            <br>
+            <!----Play Again BTN---->
+            <a href="#" class="btn-submit" onclick="goPlayAgain()"> Play again </a>
+
+        </div>
+        <script src="js/score.js"></script>
+    </body>
+</html>
