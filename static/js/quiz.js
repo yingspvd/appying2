@@ -181,6 +181,13 @@ function randomQuiz()
     console.log("answer "+answer)
 }
 
+document.getElementById('AnswerFill').addEventListener("keyup", function(event) {
+    event.preventDefault();
+    if (event.keyCode === 13) {
+      checkAnswer();
+    }
+});
+
 function checkAnswer() 
 {
     var check = 0;
@@ -233,7 +240,8 @@ function checkAnswer()
             { document.getElementById('showWrong').innerHTML = "" , randomQuiz(); }, 800);
             
         }
-    
+
+        document.getElementById('AnswerFill').autofocus;
     
 }
 
@@ -241,6 +249,7 @@ firebase.database().ref().child('judger/start').on('value' , snap =>
 {
     if( snap.val() == true ) {
         document.getElementById('AnswerFill').removeAttribute('disabled');
+        document.getElementById('AnswerFill').autofocus;
 
         function startTimer(duration, display) 
         {
