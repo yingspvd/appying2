@@ -8,7 +8,8 @@ document.getElementById('player').addEventListener("keyup", function(event) {
     }
 });
 
-function savePlayer() {
+function savePlayer() 
+{
     var userName = document.getElementById('player').value;
 
     if(userName != "") 

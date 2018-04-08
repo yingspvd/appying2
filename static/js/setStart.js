@@ -1,7 +1,5 @@
 var db = firebase.database();
 
-var db = firebase.database();
-
 init_db() 
 
 function init_db() 
@@ -11,7 +9,7 @@ function init_db()
         start: false                                                                   
         
     });
-    document.getElementById('gameStart').innerHTML = ""
+    document.getElementById('gameStart').innerHTML = "";
 }
 
 
@@ -21,4 +19,13 @@ function start()
         start: true
     });
     document.getElementById('gameStart').innerHTML = "Game Start!"
+
+    
+    db.ref('question/' ).set({
+        que: 0
+    });
+    window.location.href = "http://localhost:8000/wait" + userName;
+    //window.location.href = "http://localhost:8000/quiz" + userName;
+
 }
+
