@@ -1,6 +1,13 @@
 var db = firebase.database();
 var btn = document.getElementById('btn');
 
+document.getElementById('player').addEventListener("keyup", function(event) {
+    event.preventDefault();
+    if (event.keyCode === 13) {
+        savePlayer();
+    }
+});
+
 function savePlayer() {
     var userName = document.getElementById('player').value;
 
